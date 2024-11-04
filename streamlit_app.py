@@ -15,7 +15,7 @@ st.info('This is app predicts the likelihood of loan default given certain param
 
 with st.expander('Data'):
   st.write('**Raw data**')
-  df = pd.read_csv('https://github.com/rolanda4/stream/blob/main/cleaned_dataset.csv')
+  df = pd.read_csv('https://raw.githubusercontent.com/rolanda4/stream/refs/heads/main/cleaned_dataset.csv')
   df
 
   df['Home'].replace('OWN',1, inplace=True)
