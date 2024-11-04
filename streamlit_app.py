@@ -1,11 +1,17 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split 
+from sklearn.preprocessing import FunctionTransformer,StandardScaler
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.linear_model import LogisticRegression
 
-st.title('🤖 Machine Learning App')
+st.title('💹 Credit Risk Analysis App')
 
-st.info('This is app builds a machine learning model!')
+st.info('This is app predicts the likelihood of loan default given certain parameters!')
 
 with st.expander('Data'):
   st.write('**Raw data**')
