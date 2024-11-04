@@ -51,5 +51,5 @@ with st.sidebar:
   Intent = st.selectbox('Intent', ('1', '2', '3','4', '5', '6'))
   Amount = st.slider('Amount (mm)', 500.00, 35000.00, 9588.19)
   Rate = st.slider('Rate', 5.42, 23.22, 11.00)
-  Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)Cred_length
+  Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
 
