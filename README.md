@@ -1,10 +1,10 @@
-# 🤖 Machine Learning App
+# ✅Credit Risk App
 
-This is a machine learning app.
+This app assessing the likelihood of loan default given certain parameters.
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://dp-machinelearning.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rolly-credit.streamlit.app/)
 
 ## GitHub Codespaces
 
