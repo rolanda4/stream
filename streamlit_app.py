@@ -18,20 +18,20 @@ with st.expander('Data'):
   df = pd.read_csv('https://github.com/rolanda4/stream/blob/main/cleaned_dataset.csv')
   df
 
-df['Home'].replace('OWN',1, inplace=True)
-df['Home'].replace('MORTGAGE',2, inplace=True)
-df['Home'].replace('RENT',3, inplace=True)
-df['Home'].replace('OTHER',4, inplace=True)
+  df['Home'].replace('OWN',1, inplace=True)
+  df['Home'].replace('MORTGAGE',2, inplace=True)
+  df['Home'].replace('RENT',3, inplace=True)
+  df['Home'].replace('OTHER',4, inplace=True)
 
-df['Intent'].replace('EDUCATION',1, inplace=True)
-df['Intent'].replace('MEDICAL',2, inplace=True)
-df['Intent'].replace('VENTURE',3, inplace=True)
-df['Intent'].replace('PERSONAL',4, inplace=True)
-df['Intent'].replace('HOMEIMPROVEMENT',5, inplace=True)
-df['Intent'].replace('DEBTCONSOLIDATION',6, inplace=True)
+  df['Intent'].replace('EDUCATION',1, inplace=True)
+  df['Intent'].replace('MEDICAL',2, inplace=True)
+  df['Intent'].replace('VENTURE',3, inplace=True)
+  df['Intent'].replace('PERSONAL',4, inplace=True)
+  df['Intent'].replace('HOMEIMPROVEMENT',5, inplace=True)
+  df['Intent'].replace('DEBTCONSOLIDATION',6, inplace=True)
 
-df['Default'].replace('Y',1, inplace=True)
-df['Default'].replace('N',0, inplace=True)
+  df['Default'].replace('Y',1, inplace=True)
+  df['Default'].replace('N',0, inplace=True)
 
   st.write('**X**')
   X_raw = df.drop('Default', axis=1)
