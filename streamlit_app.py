@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 
 st.title('💹 Credit Risk Analysis App')
 
-st.info('This is app predicts the likelihood of loan default given certain parameters!')
+st.info('This app predicts the likelihood of loan default given certain parameters!')
 
 with st.expander('Data'):
   st.write('**Raw data**')
