@@ -46,7 +46,7 @@ with st.sidebar:
   st.header('Input features')
   Age = st.slider('Age (yrs)', 20, 27, 78)
   Income = st.slider('Income (Ghc)', 4000, 2039784, 65878.94)
-  Home = st.selectbox('Island', ('1', '2', '3'.'4'))
+  Home = st.selectbox('Home', ('1', '2', '3','4'))
   Emp_length = st.slider('Emp_length (yrs)', 0, 41, 4.77)
   Intent = st.selectbox('Intent', ('1', '2', '3','4', '5', '6'))
   Amount = st.slider('Amount (mm)', 500.00, 35000.00, 9588.19)
