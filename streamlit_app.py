@@ -65,8 +65,9 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_parameters = pd.concat([input_df, X_raw], axis=0)
 
-st.write('Your Entries')
-input_df
+with st.expander('Input'):
+  st.write('**Your Entries**')
+  input_df
 
 
 
