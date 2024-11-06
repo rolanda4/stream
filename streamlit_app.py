@@ -54,5 +54,8 @@ with st.expander('Input'):
   st.write('**Your Entries**')
   input_df
 
+#encoding categorical values to become numerals
+df_encoded = pd.get_dummies(log_mod, columns=['Home', 'Intent', 'Default'])
+
 
 
