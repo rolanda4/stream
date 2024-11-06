@@ -64,7 +64,7 @@ with st.sidebar:
           'Cred_length': Cred_length}
   input_df = pd.DataFrame(data, index=[0])
   input_parameters = pd.concat([input_df, X_raw], axis=0)
-
+  input_df
 
 
 
