@@ -18,21 +18,6 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/rolanda4/stream/refs/heads/main/cleaned_dataset.csv')
   df
 
-  df['Home'].replace('OWN',1, inplace=True)
-  df['Home'].replace('MORTGAGE',2, inplace=True)
-  df['Home'].replace('RENT',3, inplace=True)
-  df['Home'].replace('OTHER',4, inplace=True)
-
-  df['Intent'].replace('EDUCATION',1, inplace=True)
-  df['Intent'].replace('MEDICAL',2, inplace=True)
-  df['Intent'].replace('VENTURE',3, inplace=True)
-  df['Intent'].replace('PERSONAL',4, inplace=True)
-  df['Intent'].replace('HOMEIMPROVEMENT',5, inplace=True)
-  df['Intent'].replace('DEBTCONSOLIDATION',6, inplace=True)
-
-  df['Default'].replace('Y',1, inplace=True)
-  df['Default'].replace('N',0, inplace=True)
-
   st.write('**X**')
   X_raw = df.drop('Default', axis=1)
   X_raw
@@ -46,9 +31,9 @@ with st.sidebar:
   st.header('Input features')
   Age = st.slider('Age (yrs)', 20, 27, 78)
   Income = st.slider('Income (Ghc)', 4000, 2039784, 65878)
-  Home = st.selectbox('Home', ('1', '2', '3','4'))
+  Home = st.selectbox('Home', ('OWN', 'MORTGAGE', 'RENT','OTHER'))
   Emp_length = st.slider('Emp_length (yrs)', 0, 41, 5)
-  Intent = st.selectbox('Intent', ('1', '2', '3','4', '5', '6'))
+  Intent = st.selectbox('Intent', ('EDUCATION', 'MEDICAL', 'VENTURE','PERSONAL', 'HOMEIMPROVEMENT', 'DEBTCONSOLIDATION'))
   Amount = st.slider('Amount (mm)', 500.00, 35000.00, 9588.19)
   Rate = st.slider('Rate', 5.42, 23.22, 11.00)
   Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
