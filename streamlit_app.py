@@ -52,4 +52,19 @@ with st.sidebar:
   Amount = st.slider('Amount (mm)', 500.00, 35000.00, 9588.19)
   Rate = st.slider('Rate', 5.42, 23.22, 11.00)
   Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
+  
+  # Create a DataFrame for the input features
+  data = {'Age': Age,
+          'Income': Income,
+          'Home': Home,
+          'Emp_length': Emp_length,
+          'Intent': Intent,
+          'Amount': Amount,
+          'Rate': Rate,
+          'Cred_length': Cred_length}
+  input_df = pd.DataFrame(data, index=[0])
+  input_parameters = pd.concat([input_df, X_raw], axis=0)
+
+
+
 
