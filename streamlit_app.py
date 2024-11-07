@@ -50,12 +50,13 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_parameters = pd.concat([input_df, X_raw], axis=0)
 
+#encoding categorical values to become numerals
+df_encoded = pd.get_dummies(log_mod, columns=['Home', 'Intent', 'Default'])
+
 with st.expander('Input'):
   st.write('**Your Entries**')
   input_df
 
-#encoding categorical values to become numerals
-df_encoded = pd.get_dummies(log_mod, columns=['Home', 'Intent', 'Default'])
 
 
 
