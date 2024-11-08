@@ -55,26 +55,38 @@ with st.expander('Input'):
   input_df
 
 
-# Encode X
-#encoding categorical values to become numerals
-df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
 
+#encoding categorical values to become numerals
+df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent','Default'])
+
+#applying scalar to normalize
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(df_encoded)
+df_scaled = pd.DataFrame(scaled_features, columns=df_encoded.columns)
+
+# Encode X
+X= df_encoded.drop('Default_N','Default_Y' axis=1)
 X = df_encoded[1:]
 input_row = df_encoded[:1]
 
 # Encode y
-target_mapper = {'N': 0,
+y= np.argmax(df_encoded[['Default_N', 'Default_Y']].values, axis=1)
+t
+#target_mapper = {'N': 0,
                  'Y': 1,}
-def target_encode(val):
-  return target_mapper[val]
+#def target_encode(val):
+  #return target_mapper[val]
 
-y = y_raw.apply(target_encode)
+#y = y_raw.apply(target_encode)
 
 with st.expander('Data preparation'):
   st.write('**Encoded X (input data)**')
   input_row
   st.write('**Encoded y**')
   y
+# Model training and inference
+## Train the ML model
+
 
 
 
