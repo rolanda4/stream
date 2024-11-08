@@ -50,6 +50,11 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_parameters = pd.concat([input_df, X_raw], axis=0)
 
+with st.expander('Input'):
+  st.write('**Your Entries**')
+  input_df
+
+
 # Encode X
 #encoding categorical values to become numerals
 df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
@@ -67,9 +72,6 @@ y = y_raw.apply(target_encode)
 y
 
 
-with st.expander('Input'):
-  st.write('**Your Entries**')
-  input_df
 
 
 
