@@ -84,10 +84,17 @@ with st.expander('Data preparation'):
   
 # Model training and inference
 ## Train the ML model
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_raw, y, test_size=0.2, random_state=42)
 
 model = LogisticRegression()
 model.fit(X_train, y_train)
+
+## Apply model to make predictions
+prediction = model.predict(input_row)
+
+prediction_proba = accuracy_score(y_test, prediction)
+
+prediction_proba
 
 
 
