@@ -58,6 +58,7 @@ with st.expander('Input'):
 
 #encoding categorical values to become numerals
 df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent','Default'])
+df_encoded
 
 #applying scalar to normalize
 scaler = StandardScaler()
@@ -70,8 +71,8 @@ X = df_encoded[1:]
 input_row = df_encoded[:1]
 
 # Encode y
-y= np.argmax(df_encoded[['Default_N', 'Default_Y']].values, axis=1)
-t
+#y= np.argmax(df_encoded[['Default_N', 'Default_Y']].values, axis=1)
+
 #target_mapper = {'N': 0,
                  #'Y': 1,}
 #def target_encode(val):
