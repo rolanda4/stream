@@ -73,7 +73,7 @@ input_row = df_encoded[:1]
 y= np.argmax(df_encoded[['Default_N', 'Default_Y']].values, axis=1)
 t
 #target_mapper = {'N': 0,
-                 'Y': 1,}
+                 #'Y': 1,}
 #def target_encode(val):
   #return target_mapper[val]
 
