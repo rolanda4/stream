@@ -71,6 +71,11 @@ def target_encode(val):
 y = y_raw.apply(target_encode)
 y
 
+with st.expander('Data preparation'):
+  st.write('**Encoded X (input data)**')
+  df_encoded
+  st.write('**Encoded y**')
+  y
 
 
 
