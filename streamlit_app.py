@@ -50,12 +50,24 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_parameters = pd.concat([input_df, X_raw], axis=0)
 
+# Encode X
 #encoding categorical values to become numerals
-df_encoded = pd.get_dummies(df, columns=['Home', 'Intent', 'Default'])
+df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
+
+X = df_encoded[1:]
+input_row = df_encoded[:1]
+
+# Encode y
+target_mapper = {'N': 0,
+                 'Y': 1,}
+def target_encode(val):
+  return target_mapper[val]
+
 
 with st.expander('Input'):
   st.write('**Your Entries**')
   input_df
+
 
 
 
