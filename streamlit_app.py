@@ -65,7 +65,7 @@ scaled_features = scaler.fit_transform(df_encoded)
 df_scaled = pd.DataFrame(scaled_features, columns=df_encoded.columns)
 
 # Encode X
-X= df_encoded.drop('Default_N','Default_Y' axis=1)
+X= df_encoded.drop('Default_N','Default_Y', axis=1)
 X = df_encoded[1:]
 input_row = df_encoded[:1]
 
