@@ -64,5 +64,5 @@ if st.button("Run Prediction"):
     prediction_proba = model.predict_proba(input_scaled)[0][1]  # Probability of default
 
     # Display results
-    st.write("Prediction:", "Default" if prediction == 1 else "No Default")
+    st.write("Prediction:", "No Default" if prediction == 0 else "Default")
     st.write("Prediction Probability (for Default):", prediction_proba)
