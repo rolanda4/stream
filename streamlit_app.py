@@ -39,14 +39,16 @@ with st.sidebar:
   Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
   
   # Create a DataFrame for the input features
-  input_data = pd.DataFrame({'Age': Age,
-          'Income': Income,
-          'Home': Home,
-          'Emp_length': Emp_length,
-          'Intent': Intent,
-          'Amount': Amount,
-          'Rate': Rate,
-          'Cred_length': Cred_length})
+  input_data = pd.DataFrame(
+          {'Age': [Age],
+          'Income': [Income],
+          'Home': [Home],
+          'Emp_length': [Emp_length],
+          'Intent': [Intent],
+          'Amount': [Amount],
+          'Rate': [Rate],
+          'Cred_length': [Cred_length]
+          })
   input_parameters = pd.concat([input_data, X_raw], axis=0)
 
 with st.expander('Input'):
