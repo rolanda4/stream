@@ -39,16 +39,15 @@ with st.sidebar:
   Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
   
   # Create a DataFrame for the input features
-  data = {'Age': Age,
+  input_data = pd.DataFrame({'Age': Age,
           'Income': Income,
           'Home': Home,
           'Emp_length': Emp_length,
           'Intent': Intent,
           'Amount': Amount,
           'Rate': Rate,
-          'Cred_length': Cred_length}
-  input_df = pd.DataFrame(data, index=[0])
-  input_parameters = pd.concat([input_df, X_raw], axis=0)
+          'Cred_length': Cred_length})
+  input_parameters = pd.concat([input_data, X_raw], axis=0)
 
 with st.expander('Input'):
   st.write('**Your Entries**')
@@ -58,16 +57,11 @@ with st.expander('Input'):
 df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
 
 # Encode X
-X = df_encoded[1:]
 input_row = df_encoded[:1]
+X_encoded = df_encoded[1:]
 
 # Encode y
-target_mapper = {'N': 0,
-                 'Y': 1,}
-def target_encode(val):
-  return target_mapper[val]
-
-y = y_raw.apply(target_encode)
+y = y_raw.map({'N': 0, 'Y': 1})
 
 with st.expander('Data preparation'):
   st.write('**Encoded X (input data)**')
@@ -77,7 +71,7 @@ with st.expander('Data preparation'):
   
 # Model training and inference
 ## Train the ML model
-X_train, X_test, y_train, y_test = train_test_split(X_raw, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
 
 #applying scalar to normalize
 scaler = StandardScaler()
