@@ -41,7 +41,7 @@ with st.sidebar:
     Rate = st.slider('Rate', 5.42, 23.22, 11.00)
     Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
 
-if st.button("Run Prediction"):
+if st.button("Predict Likelihood of Default"):
     # Convert user input into DataFrame
     input_data = pd.DataFrame({
         'Age': [Age],
@@ -65,4 +65,4 @@ if st.button("Run Prediction"):
 
     # Display results
     st.write("Prediction:", "No Default" if prediction == 0 else "Default")
-    st.write("Prediction Probability (for Default):", prediction_proba)
+    st.write("Probability of Default:", prediction_proba)
