@@ -53,7 +53,7 @@ with st.sidebar:
 
 with st.expander('Input'):
   st.write('**Your Entries**')
-  input_df
+  input_data
 
 #encoding categorical values to become numerals
 df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
