@@ -84,9 +84,14 @@ input_row_scaled = scaler.transform(input_row)
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
+# Transform and scale user input again based on new user inputs
+input_parameters = pd.concat([input_data, X_raw], axis=0)
+df_encoded = pd.get_dummies(input_parameters, columns=['Home', 'Intent'])
+input_row = df_encoded.iloc[0:1]
+input_row_scaled = scaler.transform(input_row)  # Transform using previously fitted scaler
+
 ## Apply model to make predictions
 prediction = model.predict(input_row_scaled)
-
 prediction_proba = model.predict_proba(input_row_scaled)
 
 # Display results
