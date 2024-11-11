@@ -38,34 +38,7 @@ with st.sidebar:
   Rate = st.slider('Rate', 5.42, 23.22, 11.00)
   Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
 
- import streamlit as st
-import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split 
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-
-# Load data
-df = pd.read_csv('https://raw.githubusercontent.com/rolanda4/stream/refs/heads/main/cleaned_dataset.csv')
-
-# Define features and target
-X_raw = df.drop('Default', axis=1)
-y_raw = df.Default.map({'N': 0, 'Y': 1})
-
-# Sidebar for user inputs
-with st.sidebar:
-    st.header('Input features')
-    Age = st.slider('Age (yrs)', 20, 78, 27)
-    Income = st.slider('Income (Ghc)', 4000, 2039784, 65878)
-    Home = st.selectbox('Home', ('OWN', 'MORTGAGE', 'RENT', 'OTHER'))
-    Emp_length = st.slider('Emp_length (yrs)', 0, 41, 5)
-    Intent = st.selectbox('Intent', ('EDUCATION', 'MEDICAL', 'VENTURE', 'PERSONAL', 'HOMEIMPROVEMENT', 'DEBTCONSOLIDATION'))
-    Amount = st.slider('Amount (mm)', 500.00, 35000.00, 9588.19)
-    Rate = st.slider('Rate', 5.42, 23.22, 11.00)
-    Cred_length = st.slider('Cred_length (months)', 2.00, 30.00, 5.80)
-    
-    # Add a button to run the prediction
-    if st.button("Run Prediction"):
+if st.button("Run Prediction"):
         
         # Convert user inputs into a DataFrame
         input_data = pd.DataFrame({
