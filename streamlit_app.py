@@ -87,8 +87,9 @@ prediction = model.predict(input_row_scaled)
 
 prediction_proba = model.predict_proba(input_row_scaled)
 
-prediction_proba
-
+# Display results
+st.write("Prediction:", "Default" if prediction[0] == 1 else "No Default")
+st.write("Prediction Probability:", prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0])
 
 
 
