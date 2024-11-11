@@ -83,9 +83,9 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 
 ## Apply model to make predictions
-prediction = model.predict(input_row)
+prediction = model.predict(input_row_scaled)
 
-prediction_proba = accuracy_score(y_test, prediction)
+prediction_proba = model.predict_proba(input_row_scaled)
 
 prediction_proba
 
